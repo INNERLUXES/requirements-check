@@ -1,5 +1,9 @@
 # Changes
 
+## 1.0.1
+
+- Fix: an include given as an absolute path (`-r /some/where/file.txt`) is now resolved as absolute and refused when it lies outside the folder of the starting file. Before, on Linux and macOS it was joined to the folder of the including file instead.
+
 ## 1.0.0
 
 First release.

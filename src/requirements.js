@@ -293,7 +293,8 @@ export async function readRequirements(path, { limits = LIMITS, isDev = () => fa
           tree.remoteIncludes.push({ kind: e.kind, url: e.target, file: shown, line: e.line });
           continue;
         }
-        const target = join(dirname(file), e.target);
+        // resolve, not join: an absolute include path must stay absolute so the folder check can refuse it
+        const target = resolve(dirname(file), e.target);
         const nextShown = toPosix(join(dirname(shown), e.target));
         try {
           await walk(target, nextShown, kind === 'constraint' ? 'constraint' : e.kind, [...chain, real]);

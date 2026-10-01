@@ -1,6 +1,6 @@
 {
   "name": "requirements-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check the dependency files of a Python web application for supply-chain and reproducibility risks: unpinned requirements, missing or weak hashes, git, URL and local sources, http indexes, extra indexes, duplicate and conflicting pins, and a lock file out of step with the requirements. Reads pip requirements files, uv.lock and poetry.lock; never runs pip, no dependencies.",
   "type": "module",
   "main": "src/index.js",
