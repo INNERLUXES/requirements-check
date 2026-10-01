@@ -1,0 +1,61 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install from the lock file
+        run: npm ci
+      - name: Repository checks
+        run: npm run check
+      - name: Tests
+        run: npm test
+      - name: Example check
+        run: npm run example
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+      - name: Tests with coverage
+        run: npm run test:coverage
+
+  # The repository is checked against NIST SP 800-218 with ssdf-repo-check, pinned to its release commit.
+  ssdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          path: repo
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: INNERLUXES/ssdf-repo-check
+          ref: dfda194a3ed35623b8b420df05e110b66d984586 # v1.0.0
+          path: .ssdf
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+      - name: SSDF report in the job summary
+        run: node .ssdf/bin/ssdf-repo-check.js repo --format markdown >> "$GITHUB_STEP_SUMMARY"
+      - name: Gate
+        run: node .ssdf/bin/ssdf-repo-check.js repo --require-all --fail-on-problem

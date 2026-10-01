@@ -1,0 +1,9 @@
+# Every change is reviewed by a maintainer.
+* @innerluxesdev
+
+# The requirements parser, the TOML reader, the version rules, the checks and the SARIF output decide every line of the report; changes need extra care.
+/src/requirements.js @innerluxesdev
+/src/toml.js @innerluxesdev
+/src/names.js @innerluxesdev
+/src/check.js @innerluxesdev
+/src/sarif.js @innerluxesdev
