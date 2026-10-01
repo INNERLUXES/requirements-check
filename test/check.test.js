@@ -244,7 +244,7 @@ test('ignore rules leave findings out of the report and the gate, and the report
 
 test('maskCredentials and safeText: tokens in URLs, control and direction characters, length', () => {
   assert.equal(maskCredentials('https://__token__:pypi-s3cr3t@pypi.example.org/simple'), 'https://***@pypi.example.org/simple');
-  assert.equal(maskCredentials('git+https://ghp_t0ken@git.example.org/a.git'), 'git+https://***@git.example.org/a.git');
+  assert.equal(maskCredentials('git+https://placeholder-secret@git.example.org/a.git'), 'git+https://***@git.example.org/a.git');
   assert.equal(maskCredentials('git+ssh://git@git.example.org/a.git'), 'git+ssh://git@git.example.org/a.git');
   assert.equal(maskCredentials('example-a==1.0'), 'example-a==1.0');
   const esc = String.fromCharCode(27);
