@@ -1,0 +1,11 @@
+{
+  "privatePackages": ["example-orders-*"],
+  "allowDirect": ["git+https://github.com/example-org/"],
+  "ignore": [
+    {
+      "check": "marker-note",
+      "package": "example-task-queue",
+      "reason": "the worker runs on one Python version"
+    }
+  ]
+}

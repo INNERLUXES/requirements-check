@@ -1,0 +1,82 @@
+# Lock file of the made-up orders service, from an older branch that still uses Poetry.
+# Every name starts with example- and refers to no real package; the hashes are made up.
+
+[[package]]
+name = "example-db-driver"
+version = "2.9.9"
+description = "Database driver for the made-up orders service"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "example_db_driver-2.9.9-py3-none-any.whl", hash = "sha256:48666d9a3131d31faec02d416644e8aac239ef08168e70ab7f92612bae7fb577"},
+    {file = "example_db_driver-2.9.9.tar.gz", hash = "sha256:4833dcd8926576b785f716df9410a2cd7d5389d6ad90c3af2c9634a79ae2fc45"},
+]
+
+[[package]]
+name = "example-json-schema"
+version = "4.17.3"
+description = "JSON schema checks"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "example_json_schema-4.17.3-py3-none-any.whl", hash = "sha256:2e78cbf605ccd07cb29e831e85f6c699af11d8e32b6cbab62be846c8058443b2"},
+    {file = "example_json_schema-4.17.3.tar.gz", hash = "sha256:dbb8c78fd745f92b68cf18a470aad6ccdb8c41d820e9b1d39335bc91c259dad3"},
+]
+
+[[package]]
+name = "example-orders-models"
+version = "1.4.0"
+description = "Order and invoice models"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "example_orders_models-1.4.0-py3-none-any.whl", hash = "sha256:4de4634229f35f3835f305250950ed01a55c47b5eea1c4bed792c2d8a0ddc649"},
+    {file = "example_orders_models-1.4.0.tar.gz", hash = "sha256:fe8a2804f99ba55cdfefb4dd86aef995ee704784baf5163e94cff6627c0279a0"},
+]
+
+[package.dependencies]
+example-json-schema = ">=4.0"
+
+[[package]]
+name = "example-tz-data"
+version = "1.2.0"
+description = "Time zone data"
+optional = false
+python-versions = ">=2"
+files = [
+    {file = "example_tz_data-1.2.0-py2.py3-none-any.whl", hash = "sha256:94890435f7bbeb77ddb0c149bde183a5eb0b4456c6c1e2c202ab6661ef2bfe46"},
+    {file = "example_tz_data-1.2.0.tar.gz", hash = "sha256:24cef4922f6149494f5daf458ceacd252ff26d6a92668d96000cf88dd186d3e2"},
+]
+
+[[package]]
+name = "example-web-framework"
+version = "3.0.2"
+description = "Web framework"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "example_web_framework-3.0.2-py3-none-any.whl", hash = "sha256:3e2e1cee8f7b8c8a6afc2d2e15953557129ebb318b97eb87f2dc9f5f131d6877"},
+    {file = "example_web_framework-3.0.2.tar.gz", hash = "sha256:61c6b8591776c2253e8cb17a930844c058e364e077737e44677759eaa6a0a217"},
+]
+
+[package.dependencies]
+example-tz-data = {version = ">=1.0", markers = "sys_platform == \"win32\""}
+
+[package.extras]
+async = []
+
+[[package]]
+name = "example-wsgi-server"
+version = "22.0.0"
+description = "WSGI server"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "example_wsgi_server-22.0.0-py3-none-any.whl", hash = "sha256:97a017a3d38e54a5bdbe88c3cd922a545cb6e94866e2ccd80a7edbb1cd1e31f7"},
+    {file = "example_wsgi_server-22.0.0.tar.gz", hash = "sha256:752f67ffc4584a945ee85906f9f3e93eea8799021a693aad601868f7965f666c"},
+]
+
+[metadata]
+lock-version = "2.0"
+python-versions = "^3.12"
+content-hash = "a2dee47ba6268925da97750ab742baf67f02e2fb54ce23d499fb66a5b0222903"

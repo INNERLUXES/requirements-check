@@ -1,0 +1,16 @@
+# Requirements of the made-up orders service with the problems the tool looks for.
+# Every name starts with example- and refers to no real package; the hosts and the token are made up.
+--index-url http://pypi.example.internal/simple
+--extra-index-url https://deploy:s3cr3t-t0ken@pypi.example.org/simple
+--trusted-host pypi.example.internal
+-r requirements-shared.txt
+-c constraints.txt
+
+example-web-framework==3.0.3
+example-orders-auth>=1.2
+example-pdf-render @ git+https://github.com/example-org/example-pdf-render.git@v1.3.0
+example-image-tool @ http://files.example.com/example-image-tool-0.4.1.tar.gz#md5=ae4b417d74627d71d2620c2d109ae7ab
+-e ./vendor/example-legacy-crypto
+example-cache-client==4.1.0
+example-task-queue==5.3.6 ; python_version < "3.13"
+example-date-utils==2.8.2

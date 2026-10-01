@@ -1,0 +1,29 @@
+# Requirements of the made-up orders service, written by pip-compile with hashes.
+# Every name starts with example- and refers to no real package; the hashes are made up too.
+#
+#    pip-compile --generate-hashes requirements.in
+#
+example-db-driver==2.9.9 \
+    --hash=sha256:48666d9a3131d31faec02d416644e8aac239ef08168e70ab7f92612bae7fb577 \
+    --hash=sha256:4833dcd8926576b785f716df9410a2cd7d5389d6ad90c3af2c9634a79ae2fc45
+    # via -r requirements.in
+example-json-schema==4.17.3 \
+    --hash=sha256:2e78cbf605ccd07cb29e831e85f6c699af11d8e32b6cbab62be846c8058443b2 \
+    --hash=sha256:dbb8c78fd745f92b68cf18a470aad6ccdb8c41d820e9b1d39335bc91c259dad3
+    # via example-orders-models
+example-orders-models==1.4.0 \
+    --hash=sha256:4de4634229f35f3835f305250950ed01a55c47b5eea1c4bed792c2d8a0ddc649 \
+    --hash=sha256:fe8a2804f99ba55cdfefb4dd86aef995ee704784baf5163e94cff6627c0279a0
+    # via -r requirements.in
+example-tz-data==1.2.0 ; sys_platform == "win32" \
+    --hash=sha256:94890435f7bbeb77ddb0c149bde183a5eb0b4456c6c1e2c202ab6661ef2bfe46 \
+    --hash=sha256:24cef4922f6149494f5daf458ceacd252ff26d6a92668d96000cf88dd186d3e2
+    # via example-web-framework
+example-web-framework[async]==3.0.3 \
+    --hash=sha256:230441b24d03e4a8eb176ed20e8a55f41c11568115a1afc6fb58a25e4f6ee1b2 \
+    --hash=sha256:ea381b0b5abeee4f4811b8d29305a98dc795bc5ff02a61a62758de3fc5adc424
+    # via -r requirements.in
+example-wsgi-server==22.0.0 \
+    --hash=sha256:97a017a3d38e54a5bdbe88c3cd922a545cb6e94866e2ccd80a7edbb1cd1e31f7 \
+    --hash=sha256:752f67ffc4584a945ee85906f9f3e93eea8799021a693aad601868f7965f666c
+    # via -r requirements.in

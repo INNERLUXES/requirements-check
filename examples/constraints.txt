@@ -1,0 +1,2 @@
+# Versions the made-up orders service must stay within.
+example-date-utils<2.8

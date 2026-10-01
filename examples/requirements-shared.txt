@@ -1,0 +1,3 @@
+# Shared by the web and worker processes of the made-up orders service.
+example-cache-client==4.0.2
+example-json-tools

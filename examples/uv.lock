@@ -1,0 +1,81 @@
+version = 1
+revision = 3
+requires-python = ">=3.12"
+
+[[package]]
+name = "example-db-driver"
+version = "2.9.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.example.org/packages/example_db_driver-2.9.9.tar.gz", hash = "sha256:4833dcd8926576b785f716df9410a2cd7d5389d6ad90c3af2c9634a79ae2fc45", size = 384915 }
+wheels = [
+    { url = "https://files.example.org/packages/example_db_driver-2.9.9-py3-none-any.whl", hash = "sha256:48666d9a3131d31faec02d416644e8aac239ef08168e70ab7f92612bae7fb577", size = 101735 },
+]
+
+[[package]]
+name = "example-json-schema"
+version = "4.17.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.example.org/packages/example_json_schema-4.17.3.tar.gz", hash = "sha256:dbb8c78fd745f92b68cf18a470aad6ccdb8c41d820e9b1d39335bc91c259dad3", size = 296371 }
+wheels = [
+    { url = "https://files.example.org/packages/example_json_schema-4.17.3-py3-none-any.whl", hash = "sha256:2e78cbf605ccd07cb29e831e85f6c699af11d8e32b6cbab62be846c8058443b2", size = 90417 },
+]
+
+[[package]]
+name = "example-orders-models"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "example-json-schema" },
+]
+sdist = { url = "https://files.example.org/packages/example_orders_models-1.4.0.tar.gz", hash = "sha256:fe8a2804f99ba55cdfefb4dd86aef995ee704784baf5163e94cff6627c0279a0", size = 45120 }
+wheels = [
+    { url = "https://files.example.org/packages/example_orders_models-1.4.0-py3-none-any.whl", hash = "sha256:4de4634229f35f3835f305250950ed01a55c47b5eea1c4bed792c2d8a0ddc649", size = 31544 },
+]
+
+[[package]]
+name = "example-orders-service"
+version = "1.0.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "example-db-driver" },
+    { name = "example-orders-models" },
+    { name = "example-tz-data", marker = "sys_platform == 'win32'" },
+    { name = "example-web-framework", extra = ["async"] },
+    { name = "example-wsgi-server" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "example-db-driver", specifier = "==2.9.9" },
+    { name = "example-orders-models", specifier = "==1.4.0" },
+    { name = "example-tz-data", marker = "sys_platform == 'win32'", specifier = "==1.2.0" },
+    { name = "example-web-framework", extras = ["async"], specifier = "==3.0.3" },
+    { name = "example-wsgi-server", specifier = "==22.0.0" },
+]
+
+[[package]]
+name = "example-tz-data"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.example.org/packages/example_tz_data-1.2.0.tar.gz", hash = "sha256:24cef4922f6149494f5daf458ceacd252ff26d6a92668d96000cf88dd186d3e2", size = 190559 }
+wheels = [
+    { url = "https://files.example.org/packages/example_tz_data-1.2.0-py2.py3-none-any.whl", hash = "sha256:94890435f7bbeb77ddb0c149bde183a5eb0b4456c6c1e2c202ab6661ef2bfe46", size = 345874 },
+]
+
+[[package]]
+name = "example-web-framework"
+version = "3.0.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.example.org/packages/example_web_framework-3.0.3.tar.gz", hash = "sha256:ea381b0b5abeee4f4811b8d29305a98dc795bc5ff02a61a62758de3fc5adc424", size = 676315 }
+wheels = [
+    { url = "https://files.example.org/packages/example_web_framework-3.0.3-py3-none-any.whl", hash = "sha256:230441b24d03e4a8eb176ed20e8a55f41c11568115a1afc6fb58a25e4f6ee1b2", size = 101817 },
+]
+
+[[package]]
+name = "example-wsgi-server"
+version = "22.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.example.org/packages/example_wsgi_server-22.0.0.tar.gz", hash = "sha256:752f67ffc4584a945ee85906f9f3e93eea8799021a693aad601868f7965f666c", size = 185427 }
+wheels = [
+    { url = "https://files.example.org/packages/example_wsgi_server-22.0.0-py3-none-any.whl", hash = "sha256:97a017a3d38e54a5bdbe88c3cd922a545cb6e94866e2ccd80a7edbb1cd1e31f7", size = 85186 },
+]
