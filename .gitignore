@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+dist/
+*.sarif
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.tgz

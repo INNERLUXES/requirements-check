@@ -1,0 +1,49 @@
+{
+  "name": "requirements-check",
+  "version": "1.0.0",
+  "description": "Check the dependency files of a Python web application for supply-chain and reproducibility risks: unpinned requirements, missing or weak hashes, git, URL and local sources, http indexes, extra indexes, duplicate and conflicting pins, and a lock file out of step with the requirements. Reads pip requirements files, uv.lock and poetry.lock; never runs pip, no dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "requirements-check": "bin/requirements-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "requirements",
+    "pip",
+    "uv",
+    "poetry",
+    "python",
+    "supply-chain",
+    "security",
+    "sarif",
+    "ci",
+    "cli"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/requirements-check.git"
+  },
+  "homepage": "https://innerluxes.dev/web-development/python"
+}
